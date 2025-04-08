@@ -13,7 +13,7 @@ void towerOfHanoi(int n, char source, char auxiliary, char destination) {
     // Move the nth disk from source to destination
     cout << "Move disk " << n << " from " << source << " to " << destination << endl;
 
-    // Move the n-1 disks from auxiliary to destination
+    // Move the n-1 disks from auxiliary to destination and 
     towerOfHanoi(n - 1, auxiliary, source, destination);
 }
 
