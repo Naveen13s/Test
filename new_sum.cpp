@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-
+//this is comment
 int add(int a, int b) {
     return a + b;
 }
