@@ -10,10 +10,11 @@ Output: 4
 
 Explanation: 1st element = last element = 2, sum = 2 + 2 = 4.
 Input: nums = [-1, 2, 4, 1]
-Output:0  */
+Output:0      */
 
 #include <iostream>
 using namespace std;
+
 
 class Solution {
 public:
