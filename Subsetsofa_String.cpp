@@ -13,6 +13,7 @@ void printSubsets(string input, string output, int index) {
     // Exclude the current character
     printSubsets(input, output, index + 1);
 }
+//for test
 
 int main() {
     string str;
