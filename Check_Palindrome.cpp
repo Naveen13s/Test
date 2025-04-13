@@ -15,6 +15,7 @@ bool isPalindrome(string str) {
     return true;
 }
 
+
 int main() {
     string input;
     cout << "Enter a string: ";
