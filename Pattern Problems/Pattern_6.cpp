@@ -4,7 +4,7 @@
 123
 12
 1
-Print the pattern in the function given to you.*/
+Print the pattern in the function given to you.   */
 
 #include <iostream>
 using namespace std;
