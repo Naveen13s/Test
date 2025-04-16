@@ -13,7 +13,7 @@ Print the pattern in the function given to you */
 #include <iostream>
 using namespace std;
 
-// Function to print the alternating binary triangle pattern
+
 void printPattern(int n) {
     for (int i = 1; i <= n; i++) {
         int start = (i % 2 == 0) ? 0 : 1;  // Even row starts with 0, odd with 1
