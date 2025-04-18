@@ -10,7 +10,7 @@ int main(){
             continue;  //Continue statement is used to skip to the next iternatioon of loop.
         }
         if(pocketMoney==0){
-            break; // break statement is used to terminate a loop.
+            break; 
         }
         cout<<"Go Out today!"<<endl;
         pocketMoney=pocketMoney-300;
@@ -18,6 +18,7 @@ int main(){
     
 
     return 0;
+
 
    
     
