@@ -15,3 +15,27 @@
 
 Print the pattern in the function given to you.   */
 
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void printPattern(int n) {
+    int size = 2 * n - 1;
+    for (int i = 1; i <= size; i++) {
+        for (int j = 1; j <= size; j++) {
+            int val = max(abs(n - i), abs(n - j)) + 1;
+            cout << val << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main() {
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+
+    printPattern(n);
+
+    return 0;
+}
