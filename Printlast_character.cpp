@@ -1,6 +1,6 @@
 /*Given a string s. Return the last character of the given string s.
 
-Examples:
+Examples1:
 Input : s = "takeuforward"
 Output : d
 
