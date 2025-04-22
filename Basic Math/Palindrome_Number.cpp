@@ -15,4 +15,26 @@ Explanation: When read from left to right : 123.
 When read from right to left : 321.
 
 Input: 101
-Output:*/
+Output: true  */
+
+#include <iostream>
+using namespace std;
+class Solution {
+public:
+    bool isPalindrome(int n) {
+        // Convert number to string
+        std::string str = std::to_string(n);
+        int left = 0;
+        int right = str.length() - 1;
+
+        // Check for palindrome
+        while (left < right) {
+            if (str[left] != str[right]) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+};
