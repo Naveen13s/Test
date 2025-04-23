@@ -14,3 +14,30 @@ Output: false
 Explanation: Number of digits : 2.
 1 ^ 2 + 2 ^ 2 = 1 + 4 = 5.
 Therefore, it is not an Armstrong number.  */
+
+#include <iostream>
+using namespace std;
+class Solution {
+ public:
+  bool isArmstrong(int n) {
+   int temp, arm = 0;
+   temp = n;
+   int count = 0;
+   int temp2 = n;
+   while (temp2 != 0) {
+    count++;
+    temp2 = temp2 / 10;
+   }
+   while (n != 0) {
+    int ld = n % 10;
+    arm = arm + pow(ld, count);
+    n = n / 10;
+   }
+   if (arm == temp) {
+    return true;
+   }
+   else {
+    return false;
+   }
+  }
+};
