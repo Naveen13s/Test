@@ -9,3 +9,16 @@ Explanation: 2! = 1 * 2 = 2.
 Input: n = 0
 Output: 1
 Explanation: 0! is defined as 1. */
+
+#include <iostream>
+using namespace std;
+class Solution {
+public:
+    int factorial(int n) {
+        int result = 1;
+        for(int i = 1; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
+};
