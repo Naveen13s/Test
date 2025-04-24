@@ -11,3 +11,24 @@ Input: n = 10
 Output: 4
 Explanation: Prime numbers in the range [1, 10] are 2, 3, 5, 7.*/
 
+#include <iostream>
+using namespace std;
+class Solution {
+public:
+    int primeUptoN(int n) {
+        int count = 0;
+        for(int i = 2; i <= n; i++) {
+            bool isPrime = true;
+            for(int j = 2; j * j <= i; j++) {
+                if(i % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if(isPrime) {
+                count++;
+            }
+        }
+        return count;
+    }
+};
