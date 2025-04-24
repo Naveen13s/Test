@@ -11,3 +11,18 @@ Input: n = 8
 Output: false
 Explanation: The divisors of 8 are 1, 2, 4, 8, thus it is not a prime number.*/
 
+#include <iostream>
+using namespace std;
+class Solution {
+public:
+    bool isPrime(int n) {
+        if (n <= 1) return false;
+        
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+};
