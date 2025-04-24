@@ -9,7 +9,11 @@ Explanation: Prime numbers in the range [1, 6] are 2, 3, 5.
 
 Input: n = 10
 Output: 4
-Explanation: Prime numbers in the range [1, 10] are 2, 3, 5, 7.*/
+Explanation: Prime numbers in the range [1, 10] are 2, 3, 5, 7.
+
+Input: n = 20
+Output: 8
+Constraints: 2 <= n <= 1000     */
 
 #include <iostream>
 using namespace std;
