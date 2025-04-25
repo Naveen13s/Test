@@ -14,3 +14,21 @@ Explanation: The divisors of 8 are 1, 2, 4, 8.
 Input: n = 7
 Output: 3
 Constraints: 1 <= n <= 1000  */
+
+#include<bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    vector<int> divisors(int n) {
+        vector<int> divisors;
+        int copy = n;
+        divisors.push_back(1);
+        for(int i = 2; i <= n / 2; i++) {
+            if(copy % i == 0) {
+                divisors.push_back(i);
+            }
+        }
+        divisors.push_back(copy);
+        return divisors;
+    }
+};
