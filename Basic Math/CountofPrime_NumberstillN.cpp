@@ -15,6 +15,7 @@ Input: n = 20
 Output: 8
 Constraints: 2 <= n <= 1000     */
 
+
 #include <iostream>
 using namespace std;
 class Solution {
