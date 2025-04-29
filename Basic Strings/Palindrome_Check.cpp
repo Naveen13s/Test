@@ -16,3 +16,20 @@ Output: true
 Constraints:
 1 <= s.length <= 105
 s consist of only uppercase and lowercase English characters.  */
+
+#include<bits/stdc++.h>
+using namespace std;
+class Solution {
+    public:
+        bool palindromeCheck(string & s) {
+            int n = s.size();
+            bool istrue = false;
+            for (int i = 0; i < n / 2; i++) {
+                if (s[i] != s[n - 1 - i]) {
+                    istrue = false;
+                    return false;
+                }
+            }
+            return true;
+        }
+};
