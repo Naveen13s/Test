@@ -6,7 +6,7 @@ Examples:
 Input : s = "5347"
 Output : "5347"
 Explanation : The odd numbers formed by given strings are --> 5, 3, 53, 347, 5347.
-So the largest among all the possible odd numbers for given string is 5347.
+So the largest among all the possible odd numbers for given string is 5347.  
 
 Input : s = "0214638"
 Output : "21463"
@@ -19,6 +19,7 @@ Output: "32579"
 Constraints: 1 <= s.length <= 103
 '0' <= s[i] <= '9'
 */
+
 #include<bits/stdc++.h>
 using namespace std;
 class Solution {
