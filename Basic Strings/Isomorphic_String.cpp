@@ -19,3 +19,29 @@ Output:true
 Constraints:1 <= s.length <= 103
 s.length == t.length
 s and t consist of only lowercase English letters.*/
+
+#include<bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    bool isomorphicString(string s, string t) {
+        if (s.length() != t.length()) return false;
+        vector<int> char1(256, 0); 
+        vector<int> char2(256, 0);
+        int n = s.length();
+
+        for (int i = 0; i < n; i++)
+        {
+            if (char1[s[i]] == 0 && char2[t[i]] == 0)
+            {
+                char1[s[i]] = t[i] + 1;
+                char2[t[i]] = s[i] + 1;
+            }
+            else if (char1[s[i]] != t[i] + 1 || char2[t[i]] != s[i] + 1)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+};

@@ -20,23 +20,21 @@ str[i] contains only lowercase English letters.
 #include<bits/stdc++.h>
 using namespace std;
 class Solution {
-public:
-    string longestCommonPrefix(vector<string>& str) {
-        if (str.empty()) return "";
-        string common_sub = str[0];
-        for (int i = 1; i < str.size(); i++) {
-            int len = min(common_sub.length(), str[i].length());
-            for (int j = 0; j < len; j++) {
-                if (common_sub[j] != str[i][j]) {
-                    common_sub = common_sub.substr(0, j);
-                    break;
-                }
+    public:
+        std::string longestCommonPrefix(std::vector<std::string>& str) {
+            // your code goes here
+            int n = str.size();
+            if (n == 0) return "";
+            std::sort(str.begin(), str.end());
+            std::string first = str[0];
+            std::string last = str[n - 1];
+            std::string ans = "";
+            for (int i = 0; i < std::min(first.size(), last.size()); i++) {
+                if (first[i] != last[i]) break;
+                ans += first[i];
             }
-            // If there's no common prefix, return empty string
-            if (common_sub.empty()) return "";
+            return ans;
         }
-        return common_sub;
-    }
 };
 
 
