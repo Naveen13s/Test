@@ -18,3 +18,32 @@ Output : false
 
 Explanation : Any number of shift operations cannot convert string s to string goal.*/
 
+#include<bits/stdc++.h>
+using namespace std;
+class Solution{
+
+  public:
+
+    bool rotateString(string& s,string& goal){
+
+      
+
+      if(s.size()!=goal.size()) return false;
+
+      int n=s.size();
+
+      string shift=s;
+
+      for(int i=0;i<n;i++){
+
+        if(shift==goal) return true;
+
+        shift=shift[n-1]+shift.substr(0,n-1);
+
+      }
+
+      return false;
+
+    }
+
+};
