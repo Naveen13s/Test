@@ -16,3 +16,16 @@ Output: 55
 Constraints:
 1 <= N <= 103
 */
+
+#include<bits/stdc++.h>
+using namespace std;
+class Solution {
+    public:
+        int NnumbersSum(int N) {
+            if (N <= 0) {
+                return 0;
+            }
+            // Recursive case simply
+            return N + NnumbersSum(N - 1);
+        }
+};
