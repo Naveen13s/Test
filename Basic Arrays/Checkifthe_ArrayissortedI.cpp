@@ -19,6 +19,7 @@ Constraints: 1 ≤ n ≤ 106
 #include<bits/stdc++.h>
 using namespace std;
 class Solution {
+    
 public:
     bool arraySortedOrNot(int arr[], int n) {
         for (int i = 0; i < n - 1; i++) {
