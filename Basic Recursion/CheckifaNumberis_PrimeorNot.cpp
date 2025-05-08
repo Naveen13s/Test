@@ -17,3 +17,22 @@ Input : num = 41
 Output: true
 Constraints:
 1 <= num <= 104   */
+
+#include<bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    bool checkPrime(int num) {
+        if (num <= 1) return false; 
+        return isPrimeRecursive(num, 2);
+    }
+
+private:
+    bool isPrimeRecursive(int num, int i) {
+        // Base cases:
+        if (i * i > num) return true; 
+        if (num % i == 0) return false; 
+        // Recursive call:
+        return isPrimeRecursive(num, i + 1);
+    }
+};
