@@ -18,6 +18,7 @@ Output: true
 Constraints:
 1 <= num <= 104   */
 
+
 #include<bits/stdc++.h>
 using namespace std;
 class Solution {
