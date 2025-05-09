@@ -12,3 +12,20 @@ Input : nums = [1, 2, 1]
 Output: [1, 2, 1]
 Constraints: 1 <= n <= 100
 1 <= nums[i] <= 100  */
+
+
+#include<bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    vector<int> reverseArray(vector<int>& nums) {
+        int l = 0, r = nums.size() - 1;
+
+        while (l < r) {  
+            swap(nums[l], nums[r]);
+            l++;
+            r--;
+        }
+        return nums;
+    }
+};
