@@ -13,3 +13,14 @@ Output : 2
 Explanation : In first iteration the digits sum will be = 1 + 0 + 1 => 2
 Now single digit is remaining , so we return it. */
 
+#include<bits/stdc++.h>
+using namespace std;
+class Solution {
+    public:
+        int addDigits(int num) {
+            if (num == 0) return 0;
+            int ans = addDigits(num / 10) + num % 10;
+            return ans % 10 + addDigits(ans / 10);
+        }
+};
+
