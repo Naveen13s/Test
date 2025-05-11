@@ -8,27 +8,20 @@
 Print the pattern in the function given to you.*/
 
 
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
-
-// Function to print the pattern
-void printPattern(int n) {
-    for (int i = 1; i <= n; i++) {
-        // Print i stars in each row
-        for (int j = 1; j <= i; j++) {
-            cout << "*";
+class Solution {
+public:
+    void pattern2(int n) {
+        int i, j; 
+        for(i = 0 ; i < n ; i++)
+        {
+            for (j = 0 ; j <= i ; j++)
+            {
+                cout << "*";
+            }
+             cout << endl;   
         }
-        cout << endl;
     }
-}
+};
 
-// Main function to test
-int main() {
-    int n;
-    cout << "Enter the value of N: ";
-    cin >> n;
-
-    printPattern(n);
-
-    return 0;
-}
