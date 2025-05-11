@@ -6,26 +6,18 @@
 12345
 Print the pattern in the function given to you.*/
 
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
-
-// Function to print the number pattern
-void printPattern(int n) {
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= i; j++) {
-            cout << j;
+class Solution {
+public:
+    void pattern3(int n) {
+        for(int i=0;i<n;i++){
+            for(int j=1;j<=i+1;j++){
+                cout << j;
+            }
+            cout << endl;
         }
-        cout << endl;
     }
-}
+};
 
-// Main function to take input and call the pattern function
-int main() {
-    int n;
-    cout << "Enter a number: ";
-    cin >> n;
 
-    printPattern(n);
-
-    return 0;
-}
