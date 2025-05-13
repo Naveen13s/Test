@@ -9,30 +9,17 @@ Print the pattern in the function given to you.  */
 
 #include <iostream>
 using namespace std;
-
-// Function to print the centered pyramid pattern
-void printPattern(int n) {
-    for (int i = 1; i <= n; i++) {
-        // Print leading spaces
-        for (int space = 1; space <= n - i; space++) {
-            cout << " ";
+class Solution {
+    public:
+        void pattern7(int n) {
+            for (int i = 1; i <= n; i++) {
+                for (int j = 1; j <= n - i; j++) {
+                    cout << " ";
+                }
+                for (int j = 1; j <= 2 * i - 1; j++) {
+                    cout << "*";
+                }
+                cout << endl;
+            }
         }
-
-        // Print stars (2*i - 1 stars in each row)
-        for (int star = 1; star <= 2 * i - 1; star++) {
-            cout << "*";
-        }
-
-        cout << endl;
-    }
-}
-
-int main() {
-    int n;
-    cout << "Enter a number: ";
-    cin >> n;
-
-    printPattern(n);
-
-    return 0;
-}
+    };
