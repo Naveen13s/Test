@@ -13,32 +13,18 @@ Print the pattern in the function given to you.*/
 
 #include <iostream>
 using namespace std;
-
-// Function to print the increasing + decreasing triangle pattern
-void printPattern(int n) {
-    // Increasing part
-    for (int i = 1; i <= n; i++) {
-        for (int star = 1; star <= i; star++) {
-            cout << "*";
+class Solution {
+    public: 
+        void pattern10(int n) {
+            for (int i = 1; i <= 2 * n - 1; i++) {
+                int stars = i;
+                if (i > n) stars = 2 * n - i;
+                for (int j = 1; j <= stars; j++) {
+                    cout << "*";
+                }
+                cout << endl;
+            }
         }
-        cout << endl;
-    }
-
-    // Decreasing part
-    for (int i = n - 1; i >= 1; i--) {
-        for (int star = 1; star <= i; star++) {
-            cout << "*";
-        }
-        cout << endl;
-    }
-}
-
-int main() {
-    int n;
-    cout << "Enter a number: ";
-    cin >> n;
-
-    printPattern(n);
-
-    return 0;
-}
+    
+    };
+    
