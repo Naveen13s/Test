@@ -12,25 +12,16 @@ Print the pattern in the function given to you */
 
 #include <iostream>
 using namespace std;
-
-
-void printPattern(int n) {
-    for (int i = 1; i <= n; i++) {
-        int start = (i % 2 == 0) ? 0 : 1;  // Even row starts with 0, odd with 1
-        for (int j = 1; j <= i; j++) {
-            cout << start << " ";
-            start = 1 - start;  // Flip between 1 and 0
+class Solution {
+    public:
+        void pattern11(int n) {
+            for(int i = 1; i <= n; i++){
+                for(int j = 1; j <= i; j++){
+                    if((i-j)%2==0) cout<<"1 ";
+                    else cout<<"0 ";
+                }
+                cout<<endl;
+            }
         }
-        cout << endl;
-    }
-}
-
-int main() {
-    int n;
-    cout << "Enter a number: ";
-    cin >> n;
-
-    printPattern(n);
-
-    return 0;
-}
+    };
+    
