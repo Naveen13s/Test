@@ -13,25 +13,20 @@ Print the pattern in the function given to you. */
 
 #include <iostream>
 using namespace std;
-
-// Function to print the number triangle pattern
-void printPattern(int n) {
-    int num = 1; // Start from 1
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= i; j++) {
-            cout << num << " ";
-            num++;
+class Solution {
+    public:
+        void pattern12(int n) {
+            for (int i = 1; i <= n; i++) {
+                for (int j = 1; j <= i; j++) {
+                    cout << j;
+                }
+                for (int j = 1; j <= (2 * n) - (2 * i); j++) {
+                    cout << " ";
+                }
+                for (int j = i; j >= 1; j--) {
+                    cout << j;
+                }
+                cout << endl;
+            }
         }
-        cout << endl;
-    }
-}
-
-int main() {
-    int n;
-    cout << "Enter a number: ";
-    cin >> n;
-
-    printPattern(n);
-
-    return 0;
-}
+    };
