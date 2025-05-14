@@ -11,36 +11,21 @@ Input: n = 25
 Output: 1
 Explanation: The only odd digit in 25 is 5.   */
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
-int countOddDigits(int n) {
-    int count = 0;
-
-    // Handle case when n is 0
-    if (n == 0)
-        return 0;
-
-    while (n > 0) {
-        int digit = n % 10;
-        if (digit % 2 == 1) {
-            count++;
+class Solution {
+public:
+    int countOddDigit(int n) {
+        int oddDigits = 0;
+        while (n > 0) {
+            int lastDigit = n % 10;
+            if (lastDigit % 2 != 0) {
+                oddDigits = oddDigits + 1;
+            }
+            n = n / 10;
         }
-        n /= 10;
+
+        return oddDigits;
     }
-
-    return count;
-}
-
-int main() {
-    int n;
-    cout << "Enter a number: ";
-    cin >> n;
-
-    int result = countOddDigits(n);
-    cout << "Number of odd digits: " << result << endl;
-
-    return 0;
-}
-
+};
 
