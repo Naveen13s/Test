@@ -18,17 +18,14 @@ Constraints: 1 <= n <= 1000  */
 #include<bits/stdc++.h>
 using namespace std;
 class Solution {
-public:
-    vector<int> divisors(int n) {
-        vector<int> divisors;
-        int copy = n;
-        divisors.push_back(1);
-        for(int i = 2; i <= n / 2; i++) {
-            if(copy % i == 0) {
-                divisors.push_back(i);
+    public:
+        vector<int> divisors(int n) {
+            vector<int> ans;
+            for(int i=1; i <= n; i++) {
+                if(n % i == 0) {
+                    ans.push_back(i);
+                }
             }
+            return ans;
         }
-        divisors.push_back(copy);
-        return divisors;
-    }
-};
+    };
