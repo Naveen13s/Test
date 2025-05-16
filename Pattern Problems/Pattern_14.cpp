@@ -8,22 +8,14 @@ Print the pattern in the function given to you.  */
 
 #include <iostream>
 using namespace std;
-
-void printPattern(int n) {
-    for (int i = 1; i <= n; i++) {
-        for (char ch = 'A'; ch < 'A' + i; ch++) {
-            cout << ch;
+class Solution {
+    public:
+        void pattern14(int n) {
+            for(int i = 1; i <= n; i++) {
+                for(char ch = 'A'; ch <= 'A' + i - 1; ch++) {
+                    cout << ch;
+                }
+                cout << endl;
+            }
         }
-        cout << endl;
-    }
-}
-
-int main() {
-    int n;
-    cout << "Enter a number: ";
-    cin >> n;
-
-    printPattern(n);
-
-    return 0;
-}
+    };
