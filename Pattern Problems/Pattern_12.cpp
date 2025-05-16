@@ -11,36 +11,20 @@ Print the pattern in the function given to you.  */
 
 #include <iostream>
 using namespace std;
-
-// Function to print the mirrored number pattern
-void printPattern(int n) {
-    for (int i = 1; i <= n; i++) {
-        // Print increasing numbers from 1 to i
-        for (int j = 1; j <= i; j++) {
-            cout << j;
+class Solution {
+    public:
+        void pattern12(int n) {
+            for (int i = 1; i <= n; i++) {
+                for (int j = 1; j <= i; j++) {
+                    cout << j;
+                }
+                for (int j = 1; j <= (2 * n) - (2 * i); j++) {
+                    cout << " ";
+                }
+                for (int j = i; j >= 1; j--) {
+                    cout << j;
+                }
+                cout << endl;
+            }
         }
-
-        // Print spaces: 2 * (n - i)
-        int spaces = 2 * (n - i);
-        for (int s = 1; s <= spaces; s++) {
-            cout << " ";
-        }
-
-        // Print decreasing numbers from i to 1
-        for (int j = i; j >= 1; j--) {
-            cout << j;
-        }
-
-        cout << endl;
-    }
-}
-
-int main() {
-    int n;
-    cout << "Enter a number: ";
-    cin >> n;
-
-    printPattern(n);
-
-    return 0;
-}
+    };
