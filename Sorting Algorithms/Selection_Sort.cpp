@@ -18,3 +18,22 @@ Output: [2, 3, 3, 4, 5]
 Constraints: 1 <= nums.length <= 1000
 -104 <= nums[i] <= 104
 nums[i] may contain duplicate values.  */
+
+#include<bits/stdc++.h>
+using namespace std;
+class Solution {
+    public:
+        vector<int> selectionSort(vector<int>& nums) {
+            int n = nums.size();
+            if (n == 0) return nums; 
+            for (int i = 0; i < n - 1; i++) {
+                int minIndex = i;
+                for (int j = i + 1; j < n; j++) {
+                    if (nums[j] < nums[minIndex])
+                        minIndex = j;
+                }
+                swap(nums[minIndex], nums[i]);
+            }
+            return nums;
+        }
+    };
