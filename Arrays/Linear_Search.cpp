@@ -14,3 +14,18 @@ Output: 0
 Constraints: 1 <= nums.length <= 105
 -104 <= nums[i] <= 104
 -104 <= target <= 10  */
+
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+    public:
+        int linearSearch(vector<int>& nums, int target) {
+            int n = nums.size();
+            for(int i = 0; i < n; i++) {
+                if(nums[i] == target) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+};
