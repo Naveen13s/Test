@@ -16,3 +16,16 @@ Constraints: 1 <= nums.length <= 105
 -104 <= nums[i] <= 104
 nums may contain duplicate elements.  */
 
+class Solution {
+    public: 
+        int largestElement(vector<int>& nums) {
+            int large = INT_MIN;
+            for(int i = 0; i < nums.size(); i++) {
+                if(nums[i] > large) {
+                    large = nums[i];
+                }
+            }
+            return large;
+        }
+};
+
