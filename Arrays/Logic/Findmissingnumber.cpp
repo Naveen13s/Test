@@ -17,3 +17,19 @@ n == nums.length
 1 <= n <= 104
 0 <= nums[i] <= n
 All the numbers of nums are unique.   */
+
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        map<int,int> mpp;
+        for(int i=0; i < nums.size(); i++)
+            mpp[nums[i]]++;
+        for(int i=0; i <= nums.size(); i++) {
+            if(mpp[i] == 0)
+                return i;
+        }
+        return -1;
+    }
+};
