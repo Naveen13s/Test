@@ -16,3 +16,30 @@ Output: [-45, 0, 0]
 Constraints: 1 <= nums1.length, nums2.length <= 1000
 -104 <= nums1[i], nums2[i] <= 104
 Both nums1 and nums2 are sorted in non-decreasing order.  */
+
+
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    vector<int> intersectionArray(vector<int>& nums1, vector<int>& nums2) {
+        int n1 = nums1.size();
+        int n2 = nums2.size();
+        vector<int> ans;
+
+        int i = 0, j = 0;
+        while (i < n1 && j < n2) {
+            if (nums1[i] == nums2[j]) {
+                ans.push_back(nums1[i]);
+                i++;
+                j++;
+            } else if (nums1[i] < nums2[j]) {
+                i++;
+            } else {
+                j++;
+            }
+        }
+
+        return ans;
+    }
+};
