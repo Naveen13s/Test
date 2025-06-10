@@ -16,3 +16,22 @@ Output: [5, 1, -10]
 Constraints:
 1 <= nums.length <= 105
 -104 <= nums[i] <= 104  */
+
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    vector<int> leaders(vector<int>& nums) {
+        vector<int> ans;
+        int maximum = INT_MIN;
+        int n = nums.size();
+        for (int i = n - 1; i >= 0; i--) {
+            if (nums[i] > maximum) {
+                ans.emplace_back(nums[i]);
+                maximum = nums[i];
+            }
+        }
+        reverse(ans.begin(), ans.end());
+        return ans;
+    }
+};
