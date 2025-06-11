@@ -15,3 +15,27 @@ Constraints:
   1 <= nums.length <= 105
   -105 < nums[i], target < 105
   nums is sorted in ascending order.  */
+
+#include <bits/stdc++.h>
+using namespace std;
+class Solution{
+public:
+    int search(const std::vector<int>& nums, int target) {
+    int left = 0;
+    int right = nums.size() - 1;
+
+    // Binary search loop
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+
+        if (nums[mid] == target) {
+            return mid; // Found the target
+        } else if (nums[mid] < target) {
+            left = mid + 1; // Search right half
+        } else {
+            right = mid - 1; // Search left half
+        }
+    }
+
+    return -1; // Target not found
+}};
