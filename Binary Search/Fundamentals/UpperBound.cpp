@@ -16,4 +16,23 @@ Output: 1
 Constraints: 1 <= nums.length <= 105
   -105 < nums[i], x < 105
   nums is sorted in ascending order. */
-  
+
+  #include <bits/stdc++.h>
+using namespace std;
+
+class Solution
+{
+public:
+    int upperBound(vector<int> &nums, int x)
+    {
+        int n = nums.size();
+        for (int i = 0; i < n; i++)
+        {
+            if (nums[i] > x)
+            {
+                return i;
+            }
+        }
+        return n;
+    }
+};
