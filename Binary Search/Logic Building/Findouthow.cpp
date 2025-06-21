@@ -18,4 +18,22 @@ Constraints:
  -104 <= nums[i] <= 104
  All the integers of nums are unique.   */
 
- 
+
+ #include <bits/stdc++.h>  
+using namespace std;      
+
+class Solution {
+public:
+    int findKRotation(vector<int>& nums) {
+        int n = nums.size();
+        int ans = INT_MAX, index = -1; 
+        for (int i = 0; i < n; i++) {
+            if (nums[i] < ans) {  
+                ans = nums[i];  
+                index = i;      
+            }
+        }
+        return index;  
+    }
+};
+
