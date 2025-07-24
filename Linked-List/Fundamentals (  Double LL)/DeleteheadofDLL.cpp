@@ -18,3 +18,45 @@ n == Number of nodes in the linked list
 1 <= n <= 100
 0 <= ListNode.val <= 100   */
 
+/*
+Definition of doubly linked list:
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode *prev;
+    ListNode()
+    {
+        val = 0;
+        next = NULL;
+        prev = NULL;
+    }
+    ListNode(int data1)
+    {
+        val = data1;
+        next = NULL;
+        prev = NULL;
+    }
+    ListNode(int data1, ListNode *next1, ListNode *prev1)
+    {
+        val = data1;
+        next = next1;
+        prev = prev1;
+    }
+};
+*/
+
+class Solution {
+public:
+    ListNode * deleteHead(ListNode* head) {
+        if (head == nullptr || head->next == nullptr) 
+            return nullptr;
+        ListNode* prev = head;
+        head = head->next;
+        head->prev = nullptr;
+        prev->next = nullptr;
+        return head;          
+    }
+};
+
+
