@@ -16,3 +16,41 @@ n == Number of nodes in the Linked List
 1 <= n <= 100
 0 <= ListNode.val <= 100
 0 <= X <= 100     */
+
+/*
+Definition of doubly linked list:
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode *prev;
+    ListNode()
+    {
+        val = 0;
+        next = NULL;
+        prev = NULL;
+    }
+    ListNode(int data1)
+    {
+        val = data1;
+        next = NULL;
+        prev = NULL;
+    }
+    ListNode(int data1, ListNode *next1, ListNode *prev1)
+    {
+        val = data1;
+        next = next1;
+        prev = prev1;
+    }
+};
+*/
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    ListNode* insertBeforeHead(ListNode* head, int X) {
+        ListNode* newHead = new ListNode(X, head, nullptr);
+        head->prev = newHead;
+        return newHead; 
+    }
+};
