@@ -9,6 +9,7 @@ Explanation: 3 was added before the 1st node. Note that the head's value is chan
 Input: head -> 5, X = 7
 Output: head -> 7 <-> 5
 
+
 Input: head -> 2 <-> 3, X = 10
 Output: head -> 10 <-> 2 <-> 3
 Constraints:
