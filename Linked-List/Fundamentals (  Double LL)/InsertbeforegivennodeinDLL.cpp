@@ -20,3 +20,42 @@ Constraints:
 •	It is guaranteed the given node will be a part of a doubly linked list and will not be its head.
 
 */
+/*
+Definition of doubly linked list:
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode *prev;
+    ListNode()
+    {
+        val = 0;
+        next = NULL;
+        prev = NULL;
+    }
+    ListNode(int data1)
+    {
+        val = data1;
+        next = NULL;
+        prev = NULL;
+    }
+    ListNode(int data1, ListNode *next1, ListNode *prev1)
+    {
+        val = data1;
+        next = next1;
+        prev = prev1;
+    }
+};
+*/
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    void insertBeforeGivenNode(ListNode* node, int X) {
+        ListNode* prev = node->prev;
+        ListNode* newNode = new ListNode(X, node, prev);
+        prev->next = newNode;
+        node->prev = newNode;
+        return;
+    }
+};
