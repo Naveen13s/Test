@@ -17,3 +17,75 @@ Constraints:
 0 <= ListNode.val <= 104
 1 <= n <= number of nodes in the Linked List.
 */
+
+/*
+Definition of singly linked list:
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode()
+    {
+        val = 0;
+        next = NULL;
+    }
+    ListNode(int data1)
+    {
+        val = data1;
+        next = NULL;
+    }
+    ListNode(int data1, ListNode *next1)
+    {
+        val = data1;
+        next = next1;
+    }
+};
+*/
+
+class Solution {
+public:
+    //Function to remove the nth node from end
+    ListNode* removeNthFromEnd(ListNode* head, int n) {
+        if (head == NULL) {
+            return NULL;
+        }
+        int cnt = 0;
+        ListNode* temp = head;
+
+        // Count the number of nodes 
+        while (temp != NULL) {
+            cnt++;
+            temp = temp->next;
+        }
+
+        /*If N equals 
+        the total number of nodes
+        delete the head*/
+        if (cnt == n) {
+            ListNode* newhead = head->next;
+            delete (head);
+            return newhead;
+        }
+
+       /* Calculate the position 
+        of the node to delete (res)*/
+        int res = cnt - n;
+        temp = head;
+
+        /*Traverse to the node 
+        just before the one to delete*/
+        while (temp != NULL) {
+            res--;
+            if (res == 0) {
+                break;
+            }
+            temp = temp->next;
+        }
+
+        //Delete the Nth node from the end
+        ListNode* delNode = temp->next;
+        temp->next = temp->next->next;
+        delete (delNode);
+        return head;
+    }
+};
