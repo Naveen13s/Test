@@ -20,3 +20,54 @@ Constraints:
 
 
 */
+
+/*
+Definition of singly linked list:
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode()
+    {
+        val = 0;
+        next = NULL;
+    }
+    ListNode(int data1)
+    {
+        val = data1;
+        next = NULL;
+    }
+    ListNode(int data1, ListNode *next1)
+    {
+        val = data1;
+        next = next1;
+    }
+};
+*/
+
+class Solution {
+public:
+    ListNode* deleteMiddle(ListNode* head) {
+        if (head == nullptr || head->next == nullptr) {
+            delete head;
+            return nullptr;
+        }
+        ListNode* temp = head;
+        int n = 0;
+        while (temp != nullptr) {
+            n++;
+            temp = temp->next;
+        }
+        int middleIndex = n / 2;
+        temp = head;
+        for (int i = 1; i < middleIndex; i++) {
+            temp = temp->next;
+        }
+        if (temp->next != nullptr) {
+            ListNode* middle = temp->next;
+            temp->next = temp->next->next;
+            delete middle;
+        }
+        return head;
+    }
+};
