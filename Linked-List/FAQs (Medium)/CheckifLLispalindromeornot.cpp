@@ -18,3 +18,49 @@ Constraints:
 0 <= ListNode.val <= 9
 The number represented does not contain any leading zeroes.
 */
+
+/*
+Definition of singly linked list:
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode()
+    {
+        val = 0;
+        next = NULL;
+    }
+    ListNode(int data1)
+    {
+        val = data1;
+        next = NULL;
+    }
+    ListNode(int data1, ListNode *next1)
+    {
+        val = data1;
+        next = next1;
+    }
+};
+*/
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    bool isPalindrome(ListNode* head) {
+        stack<int> st;
+        ListNode* temp = head;
+        while (temp != NULL) {
+            st.push(temp->val);
+            temp = temp->next;
+        }
+        temp = head;
+        while (temp != NULL) {
+            if (temp->val != st.top()) {
+                return false;
+            }
+            st.pop();
+            temp = temp->next;
+        }
+        return true;
+    }
+};
