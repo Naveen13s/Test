@@ -17,3 +17,47 @@ Output:1
 Constraints: 1 <= number of Nodes in the Linked List <= 105
 -104 <= ListNode.val <= 104
 */
+
+/*
+Definition of singly linked list:
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode()
+    {
+        val = 0;
+        next = NULL;
+    }
+    ListNode(int data1)
+    {
+        val = data1;
+        next = NULL;
+    }
+    ListNode(int data1, ListNode *next1)
+    {
+        val = data1;
+        next = next1;
+    }
+};
+*/
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    ListNode* middleOfLinkedList(ListNode* head) {
+        ListNode* temp = head;
+        int count = 0;
+        while(temp != NULL) {
+            count += 1;  
+            temp = temp-> next;
+        }
+        
+        int midPosition = (count)/2 + 1;
+        ListNode* middleNode = head;
+        for(int i = 1; i < midPosition; i++) {
+            middleNode = middleNode -> next;
+        }
+        return middleNode;
+    }
+};
