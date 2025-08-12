@@ -22,3 +22,44 @@ Constraints:
 0 <= ListNode.val <= 104
 pos is -1 or a valid index in the linked list
 */
+
+/*
+Definition of singly linked list:
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode()
+    {
+        val = 0;
+        next = NULL;
+    }
+    ListNode(int data1)
+    {
+        val = data1;
+        next = NULL;
+    }
+    ListNode(int data1, ListNode *next1)
+    {
+        val = data1;
+        next = next1;
+    }
+};
+*/
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+        ListNode* temp = head;  
+        std::unordered_map<ListNode*, int> nodeMap;
+        while (temp != nullptr) {
+            if (nodeMap.find(temp) != nodeMap.end()) {
+                return true;
+            }
+            nodeMap[temp] = 1;
+            temp = temp->next;  
+        }
+        return false;
+    }
+};
