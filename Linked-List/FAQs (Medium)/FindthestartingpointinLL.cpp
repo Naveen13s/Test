@@ -21,3 +21,44 @@ Constraints:
 pos is -1 or a valid index in the linked list
 
 */
+
+/*
+Definition of singly linked list:
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode()
+    {
+        val = 0;
+        next = NULL;
+    }
+    ListNode(int data1)
+    {
+        val = data1;
+        next = NULL;
+    }
+    ListNode(int data1, ListNode *next1)
+    {
+        val = data1;
+        next = next1;
+    }
+};
+*/
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    ListNode *findStartingPoint(ListNode *head) {
+        ListNode* temp = head;
+        std::unordered_map<ListNode*, int> mp;
+        while(temp != nullptr) {
+            if(mp.count(temp) != 0) {
+                return temp;
+            }
+            mp[temp] = 1;
+            temp = temp->next;
+        }
+        return nullptr;
+    }
+};
