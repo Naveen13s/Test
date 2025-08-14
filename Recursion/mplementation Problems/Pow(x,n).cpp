@@ -19,3 +19,27 @@ Constraints:
 
 
 */
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    double myPow(double x, int n) {
+        if (n == 0 || x == 1.0) return 1.0;
+
+        long long exp = n; // use long long to avoid overflow with INT_MIN
+        if (exp < 0) {
+            x = 1 / x;
+            exp = -exp;
+        }
+
+        double result = 1.0;
+        while (exp > 0) {
+            if (exp % 2 == 1) result *= x; // if odd exponent, multiply once
+            x *= x;  // square the base
+            exp /= 2; // halve the exponent
+        }
+        return result;
+    }
+};
