@@ -17,3 +17,21 @@ Constraints:
 
 */
 
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+   private:
+    bool func(int ind, int sum, std::vector<int>& nums) {
+        if (ind == nums.size()) {
+            return sum == 0;
+        }
+        return func(ind + 1, sum - nums[ind], nums) | func(ind + 1, sum, nums);
+    }
+
+   public:
+    // This method initiates the recursive process
+    bool checkSubsequenceSum(std::vector<int>& nums, int target) {
+        return func(0, target, nums);  // Start the recursive process
+    }
+};
+
