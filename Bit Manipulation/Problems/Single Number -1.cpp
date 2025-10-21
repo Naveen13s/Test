@@ -17,3 +17,12 @@ Constraints:
 -3*105 <= nums[i] <= 3*105
 
 */
+
+class Solution{    
+public:
+    int singleNumber(vector<int>& nums) {
+        return std::reduce(nums.begin(),nums.end(), 0, [&](int x, int y){
+            return x ^ y;
+        });
+    }
+};
