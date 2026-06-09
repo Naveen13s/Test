@@ -8,5 +8,45 @@ Explanation: All the links are reversed and the head now points to the last node
 */
 
 
+
+/*
+Definition of singly linked list:
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode()
+    {
+        val = 0;
+        next = NULL;
+    }
+    ListNode(int data1)
+    {
+        val = data1;
+        next = NULL;
+    }
+    ListNode(int data1, ListNode *next1)
+    {
+        val = data1;
+        next = next1;
+    }
+};
+*/
 #include<bits/stdc++.h>
 using namespace std;
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        if(head==nullptr || head->next==nullptr) return head;
+        ListNode* current=head;
+        ListNode* prev=nullptr;
+        while(current!=nullptr)
+        {
+            ListNode* temp=current->next;
+            current->next=prev;
+            prev=current;
+            current=temp;
+        }
+        return prev;
+    }
+};
