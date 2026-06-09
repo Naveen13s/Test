@@ -29,5 +29,24 @@ struct ListNode
     }
 };
 */
-
+#include<bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    ListNode* middleOfLinkedList(ListNode* head) {
+        ListNode* temp = head;
+        int count = 0;
+        while(temp != NULL) {
+            count += 1;  
+            temp = temp-> next;
+        }
+        
+        int midPosition = (count)/2 + 1;
+        ListNode* middleNode = head;
+        for(int i = 1; i < midPosition; i++) {
+            middleNode = middleNode -> next;
+        }
+        return middleNode;
+    }
+};
 
