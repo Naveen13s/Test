@@ -11,3 +11,31 @@ The fourth train will use platform 3.
 So total we need 3 different platforms for the railway station so that no train is kept waiting.
 
 */
+class Solution {
+public:
+    int findPlatform(vector<int>& arr, vector<int>& dep) {
+        int n = arr.size();
+
+        sort(arr.begin(), arr.end());
+        sort(dep.begin(), dep.end());
+
+        int platforms = 1;
+        int ans = 1;
+
+        int i = 1, j = 0;
+
+        while (i < n && j < n) {
+            // Arrival at same time as departure needs a new platform
+            if (arr[i] <= dep[j]) {
+                platforms++;
+                ans = max(ans, platforms);
+                i++;
+            } else {
+                platforms--;
+                j++;
+            }
+        }
+
+        return ans;
+    }
+};
