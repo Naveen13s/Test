@@ -1,0 +1,13 @@
+//Permutations of a String
+/* Given a string s, return all unique permutations of its characters in sorted order.
+The output should be a list of strings, where each string is a valid permutation of s.
+If the string contains duplicate characters, each permutation should appear only once.
+The list should be sorted lexicographically.
+You must return a list of strings, where each string is a valid permutation of s.
+
+Example 1
+Input: s = "abc"
+Output: ["abc","acb","bac","bca","cab","cba"]
+Explanation: All 6 permutations of 3 distinct characters. 
+
+*/
