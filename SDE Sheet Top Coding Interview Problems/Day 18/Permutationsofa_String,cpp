@@ -11,3 +11,43 @@ Output: ["abc","acb","bac","bca","cab","cba"]
 Explanation: All 6 permutations of 3 distinct characters. 
 
 */
+class Solution {
+public:
+    void backtrack(string &s, vector<bool> &used,
+                   string &curr, vector<string> &ans) {
+
+        if (curr.size() == s.size()) {
+            ans.push_back(curr);
+            return;
+        }
+
+        for (int i = 0; i < s.size(); i++) {
+
+            if (used[i]) continue;
+
+            // Skip duplicate characters
+            if (i > 0 && s[i] == s[i - 1] && !used[i - 1])
+                continue;
+
+            used[i] = true;
+            curr.push_back(s[i]);
+
+            backtrack(s, used, curr, ans);
+
+            curr.pop_back();
+            used[i] = false;
+        }
+    }
+
+    vector<string> permuteUnique(string s) {
+        sort(s.begin(), s.end());
+
+        vector<string> ans;
+        vector<bool> used(s.size(), false);
+        string curr;
+
+        backtrack(s, used, curr, ans);
+
+        return ans;
+    }
+};
