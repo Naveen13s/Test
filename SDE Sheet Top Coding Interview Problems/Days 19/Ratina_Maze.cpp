@@ -5,3 +5,56 @@
    Note :In a path no cell can be visited more than once.
          If there is no possible path then return empty vector.
 */
+class Solution {
+public:
+    void solve(int i, int j, vector<vector<int>>& grid, int n,
+               vector<vector<int>>& vis, string path,
+               vector<string>& ans) {
+
+        if (i == n - 1 && j == n - 1) {
+            ans.push_back(path);
+            return;
+        }
+
+        vis[i][j] = 1;
+
+        // Down
+        if (i + 1 < n && !vis[i + 1][j] && grid[i + 1][j] == 1) {
+            solve(i + 1, j, grid, n, vis, path + 'D', ans);
+        }
+
+        // Left
+        if (j - 1 >= 0 && !vis[i][j - 1] && grid[i][j - 1] == 1) {
+            solve(i, j - 1, grid, n, vis, path + 'L', ans);
+        }
+
+        // Right
+        if (j + 1 < n && !vis[i][j + 1] && grid[i][j + 1] == 1) {
+            solve(i, j + 1, grid, n, vis, path + 'R', ans);
+        }
+
+        // Up
+        if (i - 1 >= 0 && !vis[i - 1][j] && grid[i - 1][j] == 1) {
+            solve(i - 1, j, grid, n, vis, path + 'U', ans);
+        }
+
+        vis[i][j] = 0; // Backtrack
+    }
+
+    vector<string> findPath(vector<vector<int>>& grid) {
+
+        int n = grid.size();
+        vector<string> ans;
+
+        if (grid[0][0] == 0)
+            return ans;
+
+        vector<vector<int>> vis(n, vector<int>(n, 0));
+
+        solve(0, 0, grid, n, vis, "", ans);
+
+        sort(ans.begin(), ans.end());
+
+        return ans;
+    }
+};
