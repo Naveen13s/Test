@@ -7,3 +7,44 @@
    boolean isEmpty(): Returns true if the queue is empty, false otherwise.
 */
 
+class StackQueue {
+    stack<int> s1, s2;
+
+public:
+    void push(int x) {
+        s1.push(x);
+    }
+
+    int pop() {
+        if (isEmpty()) return -1;
+
+        if (s2.empty()) {
+            while (!s1.empty()) {
+                s2.push(s1.top());
+                s1.pop();
+            }
+        }
+
+        int val = s2.top();
+        s2.pop();
+
+        return val;
+    }
+
+    int peek() {
+        if (isEmpty()) return -1;
+
+        if (s2.empty()) {
+            while (!s1.empty()) {
+                s2.push(s1.top());
+                s1.pop();
+            }
+        }
+
+        return s2.top();
+    }
+
+    bool isEmpty() {
+        return s1.empty() && s2.empty();
+    }
+};
