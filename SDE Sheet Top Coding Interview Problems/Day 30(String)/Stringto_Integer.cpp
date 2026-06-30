@@ -7,3 +7,24 @@
     The result should be clamped within the 32-bit signed integer range: [-2147483648, 2147483647]. If the computed number is outside this range, return -2147483648 if the number is less than -2147483648, or return 2147483647 if the number is greater than 2147483647.
     Finally, return the computed number after applying all the above steps.
 */
+
+class Solution {
+public:
+    int myAtoi(string s) {
+        int i = 0, sign = 1;
+        long res = 0; 
+        while (i < s.size() && s[i] == ' ') i++;
+        if (i == s.size()) return 0;
+        if (s[i] == '-') { sign = -1; i++; }
+        else if (s[i] == '+') i++;
+        while (i < s.size() && isdigit(s[i])) {
+            res = res * 10 + (s[i] - '0');
+            if (sign * res > INT_MAX) return INT_MAX;
+            if (sign * res < INT_MIN) return INT_MIN;
+
+            i++;
+        }
+
+        return (int)(sign * res);
+    }
+};
